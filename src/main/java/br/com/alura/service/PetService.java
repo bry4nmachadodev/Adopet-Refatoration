@@ -3,15 +3,10 @@ package br.com.alura.service;
 import br.com.alura.client.ClientHttpConfiguration;
 import br.com.alura.domain.Pet;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.http.HttpResponse;
 import java.util.Arrays;
 import java.util.List;
@@ -54,11 +49,13 @@ public class PetService {
     }
 
     public void importarPetsDoAbrigo() throws IOException, InterruptedException{
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Digite o id ou nome do abrigo:");
-        String idOuNome = new Scanner(System.in).nextLine();
+        String idOuNome = scanner.nextLine();
 
         System.out.println("Digite o nome do arquivo CSV:");
-        String nomeArquivo = new Scanner(System.in).nextLine();
+        String nomeArquivo = scanner.nextLine();
 
         BufferedReader reader = null;
         try {
