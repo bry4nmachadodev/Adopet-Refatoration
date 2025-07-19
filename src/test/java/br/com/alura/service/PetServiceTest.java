@@ -25,6 +25,6 @@ public class PetServiceTest {
         when(client.dispararRequisicaoPost(anyString(), any())).thenReturn(response);
 
         petService.importarPetsDoAbrigo();
-        verify(client.dispararRequisicaoPost(anyString(), anyString()), atLeast(1));
+        verify(client, atLeast(1)).dispararRequisicaoPost(anyString(), any());
     }
 }
